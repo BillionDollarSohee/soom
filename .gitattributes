@@ -1,1 +1,41 @@
-text=auto
+# 모든 텍스트 파일은 자동으로 줄바꿈 관리
+* text=auto
+
+# 명시적으로 줄바꿈 설정 (선택적으로 사용 가능)
+*.js     text eol=lf
+*.ts     text eol=lf
+*.json   text eol=lf
+*.css    text eol=lf
+*.scss   text eol=lf
+*.html   text eol=lf
+*.pug    text eol=lf
+*.md     text eol=lf
+*.yml    text eol=lf
+*.yaml   text eol=lf
+*.sh     text eol=lf
+*.bat    text eol=crlf
+
+# 바이너리 파일은 줄바꿈 변경 X
+*.png    binary
+*.jpg    binary
+*.jpeg   binary
+*.gif    binary
+*.ico    binary
+*.pdf    binary
+*.ttf    binary
+*.woff   binary
+*.woff2  binary
+*.mp4    binary
+*.zip    binary
+*.gz     binary
+
+# Windows에서 `.sh` 파일을 실행하면 안 되므로 LF 유지
+*.sh     text eol=lf
+
+# macOS나 리눅스 배포용 `.env` 파일 LF 유지
+.env      text eol=lf
+
+# VSCode 설정, 줄바꿈 충돌 방지
+.vscode/* text eol=lf
+
+# Node modules 등 무시 대상은 `.gitignore`에서 관리
