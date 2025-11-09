@@ -1,17 +1,2 @@
-const socket = new WebSocket(`ws://${window.location.host}`);
-
-socket.addEventListener("open", () => {
-    console.log("Connected to Server ✅");
-})
-
-socket.addEventListener("message", (event) => {
-  console.log("New message:", event.data, " from Server");
-});
-
-socket.addEventListener("close", (message) => {
-    console.log("Disconnected to Server ❌");
-});
-
-setTimeout(() => {
-    socket.send("hello from browser!");
-},1000);
+/* io()는 일아서 socket.io를 실행하는 서버를 찾아서 연결 */
+const socket = io();
